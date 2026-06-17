@@ -43,7 +43,7 @@ const PrintingGuide = () => {
                 </li>
               </ul>
               <div className="guide-illustration">
-                <img src="/guide-printer.webp" alt="Printer Settings" />
+                <img src={`${import.meta.env.BASE_URL}guide-printer.webp`} alt="Printer Settings" />
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ const PrintingGuide = () => {
                 </li>
               </ul>
               <div className="guide-illustration">
-                <img src="/guide-paper.webp" alt="Recommended Paper" />
+                <img src={`${import.meta.env.BASE_URL}guide-paper.webp`} alt="Recommended Paper" />
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@ const PrintingGuide = () => {
                 </li>
               </ul>
               <div className="guide-illustration">
-                <img src="/guide-cut.webp" alt="Cutting Tips" />
+                <img src={`${import.meta.env.BASE_URL}guide-cut.webp`} alt="Cutting Tips" />
               </div>
             </div>
           </div>

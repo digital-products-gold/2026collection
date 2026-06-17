@@ -31,10 +31,10 @@ const features = [
 ];
 
 const mainSamples = [
-  "/samples/main_album_1.png",
-  "/samples/main_stickers_1.png",
-  "/samples/main_stickers_5.png",
-  "/samples/main_album_2.png"
+  `${import.meta.env.BASE_URL}samples/main_album_1.png`,
+  `${import.meta.env.BASE_URL}samples/main_stickers_1.png`,
+  `${import.meta.env.BASE_URL}samples/main_stickers_5.png`,
+  `${import.meta.env.BASE_URL}samples/main_album_2.png`
 ];
 
 const Features = () => {

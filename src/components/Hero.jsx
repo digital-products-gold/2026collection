@@ -36,7 +36,7 @@ const Hero = () => {
         <div className="hero-image-wrapper">
           <div className="glow-effect"></div>
           <img 
-            src="/il_1140xN.8169060353_59ed.webp" 
+            src={`${import.meta.env.BASE_URL}il_1140xN.8169060353_59ed.webp`} 
             alt="World Football Championship 2026 Sticker Collection" 
             className="hero-image animate-float"
           />

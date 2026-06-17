@@ -11,9 +11,9 @@ const bonuses = [
 ];
 
 const bonusSamples = [
-  "/samples/bonus_cocacola_1.png",
-  "/samples/bonus_holo_shields_1.png",
-  "/samples/bonus_extra_gold_1.png"
+  `${import.meta.env.BASE_URL}samples/bonus_cocacola_1.png`,
+  `${import.meta.env.BASE_URL}samples/bonus_holo_shields_1.png`,
+  `${import.meta.env.BASE_URL}samples/bonus_extra_gold_1.png`
 ];
 
 const Bonuses = () => {
@@ -42,7 +42,7 @@ const Bonuses = () => {
 
         <div className="bonuses-visual">
           <img 
-            src="/impressora.png" 
+            src={`${import.meta.env.BASE_URL}impressora.png`} 
             alt="Print Ready" 
             className="printer-image"
           />

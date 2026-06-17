@@ -37,7 +37,7 @@ const CheckoutModal = ({ isOpen, onClose }) => {
               </div>
               <button 
                 className="btn btn-secondary btn-download" 
-                onClick={() => mockDownload('WorldCup2026_Stickers_Part1.png', '/samples/main_stickers_1.png')}
+                onClick={() => mockDownload('WorldCup2026_Stickers_Part1.png', `${import.meta.env.BASE_URL}samples/main_stickers_1.png`)}
               >
                 <Download size={18} />
                 Download
@@ -51,7 +51,7 @@ const CheckoutModal = ({ isOpen, onClose }) => {
               </div>
               <button 
                 className="btn btn-secondary btn-download" 
-                onClick={() => mockDownload('WorldCup2026_Stickers_Part2.png', '/samples/main_stickers_5.png')}
+                onClick={() => mockDownload('WorldCup2026_Stickers_Part2.png', `${import.meta.env.BASE_URL}samples/main_stickers_5.png`)}
               >
                 <Download size={18} />
                 Download
@@ -65,7 +65,7 @@ const CheckoutModal = ({ isOpen, onClose }) => {
               </div>
               <button 
                 className="btn btn-secondary btn-download" 
-                onClick={() => mockDownload('WorldCup2026_Album.png', '/samples/main_album_1.png')}
+                onClick={() => mockDownload('WorldCup2026_Album.png', `${import.meta.env.BASE_URL}samples/main_album_1.png`)}
               >
                 <Download size={18} />
                 Download
@@ -79,7 +79,7 @@ const CheckoutModal = ({ isOpen, onClose }) => {
               </div>
               <button 
                 className="btn btn-secondary btn-download" 
-                onClick={() => mockDownload('WorldCup2026_Bonuses.png', '/samples/bonus_golden_1.png')}
+                onClick={() => mockDownload('WorldCup2026_Bonuses.png', `${import.meta.env.BASE_URL}samples/bonus_golden_1.png`)}
               >
                 <Download size={18} />
                 Download
