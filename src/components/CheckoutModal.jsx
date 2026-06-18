@@ -1,8 +1,10 @@
 import React from 'react';
 import { X, Download, CheckCircle } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 import './CheckoutModal.css';
 
 const CheckoutModal = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
   if (!isOpen) return null;
 
   const mockDownload = (fileName, url) => {
@@ -25,70 +27,70 @@ const CheckoutModal = ({ isOpen, onClose }) => {
           <div className="success-icon-wrapper animate-float">
             <CheckCircle size={64} className="success-icon" />
           </div>
-          <h2>Instant Access</h2>
-          <p className="success-sub">Get access to all print-ready sticker packages and digital album resources immediately.</p>
+          <h2>{t('modal_title')}</h2>
+          <p className="success-sub">{t('modal_sub')}</p>
           
           <div className="download-section">
-            <h3>Available Files</h3>
+            <h3>{t('modal_files_title')}</h3>
             <div className="download-item">
               <div className="download-info">
-                <strong>Stickers Pack (Part 1 - Teams A-L)</strong>
-                <span>PDF Format • High Resolution • 450+ Stickers</span>
+                <strong>{t('modal_file_1')}</strong>
+                <span>{t('modal_file_1_sub')}</span>
               </div>
               <button 
                 className="btn btn-secondary btn-download" 
                 onClick={() => mockDownload('WorldCup2026_Stickers_Part1.png', `${import.meta.env.BASE_URL}samples/main_stickers_1.png`)}
               >
                 <Download size={18} />
-                Download
+                {t('modal_btn_download')}
               </button>
             </div>
             
             <div className="download-item">
               <div className="download-info">
-                <strong>Stickers Pack (Part 2 - Teams M-Z)</strong>
-                <span>PDF Format • High Resolution • 450+ Stickers</span>
+                <strong>{t('modal_file_2')}</strong>
+                <span>{t('modal_file_2_sub')}</span>
               </div>
               <button 
                 className="btn btn-secondary btn-download" 
                 onClick={() => mockDownload('WorldCup2026_Stickers_Part2.png', `${import.meta.env.BASE_URL}samples/main_stickers_5.png`)}
               >
                 <Download size={18} />
-                Download
+                {t('modal_btn_download')}
               </button>
             </div>
 
             <div className="download-item">
               <div className="download-info">
-                <strong>Digital Collector's Album 2026</strong>
-                <span>PDF Format • Standard Layout • 80 Pages</span>
+                <strong>{t('modal_file_3')}</strong>
+                <span>{t('modal_file_3_sub')}</span>
               </div>
               <button 
                 className="btn btn-secondary btn-download" 
                 onClick={() => mockDownload('WorldCup2026_Album.png', `${import.meta.env.BASE_URL}samples/main_album_1.png`)}
               >
                 <Download size={18} />
-                Download
+                {t('modal_btn_download')}
               </button>
             </div>
 
             <div className="download-item">
               <div className="download-info">
-                <strong>Exclusive Bonuses Pack</strong>
-                <span>Covers, Backings & Printing Templates</span>
+                <strong>{t('modal_file_4')}</strong>
+                <span>{t('modal_file_4_sub')}</span>
               </div>
               <button 
                 className="btn btn-secondary btn-download" 
                 onClick={() => mockDownload('WorldCup2026_Bonuses.png', `${import.meta.env.BASE_URL}samples/bonus_golden_1.png`)}
               >
                 <Download size={18} />
-                Download
+                {t('modal_btn_download')}
               </button>
             </div>
           </div>
 
           <button className="btn btn-primary w-full" onClick={onClose} style={{ marginTop: '1.5rem' }}>
-            Close Window
+            {t('modal_btn_close')}
           </button>
         </div>
       </div>

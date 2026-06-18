@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ShoppingCart } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 import './Header.css';
 
 const Header = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -41,18 +43,18 @@ const Header = () => {
 
         <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
           <li>
-            <a href="#features" onClick={closeMenu}>Features</a>
+            <a href="#features" onClick={closeMenu}>{t('nav_features')}</a>
           </li>
           <li>
-            <a href="#pricing" onClick={closeMenu}>Pricing</a>
+            <a href="#pricing" onClick={closeMenu}>{t('nav_pricing')}</a>
           </li>
           <li>
-            <a href="#faq" onClick={closeMenu}>FAQ</a>
+            <a href="#faq" onClick={closeMenu}>{t('nav_faq')}</a>
           </li>
           <li className="navbar-cta-item">
             <a href="#pricing" className="btn btn-primary pulse-btn navbar-cta" onClick={closeMenu}>
               <ShoppingCart size={18} />
-              Buy Now
+              {t('nav_buy')}
             </a>
           </li>
         </ul>

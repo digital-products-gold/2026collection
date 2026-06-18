@@ -1,14 +1,8 @@
 import React from 'react';
 import { CheckCircle, Gift } from 'lucide-react';
 import SampleCarousel from './SampleCarousel';
+import { useTranslation } from '../hooks/useTranslation';
 import './Bonuses.css';
-
-const bonuses = [
-  "Bonus Sticker Backing Templates (For a realistic look)",
-  "Easy-to-follow Printing Instructions",
-  "High-Resolution Artwork for vibrant colors",
-  "Collection Pages & Digital PDF Album"
-];
 
 const bonusSamples = [
   `${import.meta.env.BASE_URL}samples/bonus_cocacola_1.png`,
@@ -17,21 +11,29 @@ const bonusSamples = [
 ];
 
 const Bonuses = () => {
+  const { t } = useTranslation();
+
+  const bonusesList = [
+    t('bonus_item_1'),
+    t('bonus_item_2'),
+    t('bonus_item_3'),
+    t('bonus_item_4')
+  ];
   return (
     <section className="bonuses-section">
       <div className="container bonuses-container">
         <div className="bonuses-content">
           <div className="bonus-badge">
             <Gift size={20} />
-            <span>Exclusive Bonuses</span>
+            <span>{t('bonus_badge')}</span>
           </div>
-          <h2 className="section-title">Not just stickers. <span className="text-gradient">The Ultimate Package.</span></h2>
+          <h2 className="section-title">{t('bonus_title_1')}<span className="text-gradient">{t('bonus_title_2')}</span></h2>
           <p className="bonuses-description">
-            We provide everything you need to recreate the magic of collecting, including backing templates and step-by-step guides for the best results.
+            {t('bonus_desc')}
           </p>
 
           <ul className="bonuses-list">
-            {bonuses.map((bonus, index) => (
+            {bonusesList.map((bonus, index) => (
               <li key={index} className="bonus-item">
                 <CheckCircle className="check-icon" size={24} />
                 <span>{bonus}</span>
@@ -47,15 +49,15 @@ const Bonuses = () => {
             className="printer-image"
           />
           <div className="bonuses-tags-under">
-            <div className="bonus-tag">Backing Templates</div>
-            <div className="bonus-tag">High-Res Artwork</div>
-            <div className="bonus-tag">Step-by-step Guides</div>
+            <div className="bonus-tag">{t('bonus_tag_1')}</div>
+            <div className="bonus-tag">{t('bonus_tag_2')}</div>
+            <div className="bonus-tag">{t('bonus_tag_3')}</div>
           </div>
         </div>
       </div>
 
       <div className="container" style={{ marginTop: 'var(--spacing-xl)' }}>
-        <SampleCarousel images={bonusSamples} title="Bonus Content Preview" />
+        <SampleCarousel images={bonusSamples} title={t('bonus_carousel_title')} />
       </div>
     </section>
   );

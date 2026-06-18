@@ -1,44 +1,46 @@
 import React from 'react';
 import { Printer, FileText, Scissors, AlertTriangle, CheckCircle, Star, Maximize } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 import './PrintingGuide.css';
 
 const PrintingGuide = () => {
+  const { t } = useTranslation();
   return (
     <section className="printing-guide-section" id="printing-guide">
       <div className="container">
         <div className="section-header text-center">
-          <h2 className="section-title">Printing and Assembly Guide</h2>
-          <p className="section-subtitle">Follow these instructions to ensure your stickers have a professional finish and fit perfectly in your album.</p>
+          <h2 className="section-title">{t('guide_title')}</h2>
+          <p className="section-subtitle">{t('guide_subtitle')}</p>
         </div>
 
         <div className="guide-grid">
           {/* Step 1: Printing Settings */}
           <div className="guide-card">
             <div className="guide-step-number">1</div>
-            <h3 className="guide-card-title">Printing Settings <span className="highlight-text">(Very Important!)</span></h3>
+            <h3 className="guide-card-title">{t('guide_step_1_title')} <span className="highlight-text">{t('guide_important')}</span></h3>
             
             <div className="guide-content-wrapper">
               <ul className="guide-list">
                 <li>
                   <FileText className="guide-icon" />
                   <div>
-                    <strong>PAPER SIZE:</strong> Select A4.
+                    <strong>{t('guide_label_paper')}</strong> {t('guide_paper_size')}
                   </div>
                 </li>
                 <li>
                   <Maximize className="guide-icon" />
                   <div>
-                    <strong>SCALE / SIZING:</strong> Always choose 'Actual Size' or 'Scale 100%'.
+                    <strong>{t('guide_label_scale')}</strong> {t('guide_scale')}
                     <div className="alert-box">
                       <AlertTriangle size={16} />
-                      <span><strong>Attention:</strong> Never use the 'Fit to page' option.</span>
+                      <span><strong>{t('guide_label_attention')}</strong> {t('guide_attention')}</span>
                     </div>
                   </div>
                 </li>
                 <li>
                   <Star className="guide-icon" />
                   <div>
-                    <strong>QUALITY:</strong> Select 'High Quality' or 'Photo'.
+                    <strong>{t('guide_label_quality')}</strong> {t('guide_quality')}
                   </div>
                 </li>
               </ul>
@@ -51,20 +53,20 @@ const PrintingGuide = () => {
           {/* Step 2: Recommended Paper */}
           <div className="guide-card">
             <div className="guide-step-number">2</div>
-            <h3 className="guide-card-title">Recommended Paper</h3>
+            <h3 className="guide-card-title">{t('guide_step_2_title')}</h3>
             
             <div className="guide-content-wrapper">
               <ul className="guide-list">
                 <li>
                   <FileText className="guide-icon" />
                   <div>
-                    <strong>TYPE:</strong> Glossy Adhesive Photo Paper.
+                    <strong>{t('guide_label_type')}</strong> {t('guide_type')}
                   </div>
                 </li>
                 <li>
                   <Printer className="guide-icon" />
                   <div>
-                    <strong>WEIGHT:</strong> Between 115g and 135g.
+                    <strong>{t('guide_label_weight')}</strong> {t('guide_weight')}
                   </div>
                 </li>
               </ul>
@@ -77,20 +79,20 @@ const PrintingGuide = () => {
           {/* Step 3: Tips for the Perfect Cut */}
           <div className="guide-card">
             <div className="guide-step-number">3</div>
-            <h3 className="guide-card-title">Tips for the Perfect Cut</h3>
+            <h3 className="guide-card-title">{t('guide_step_3_title')}</h3>
             
             <div className="guide-content-wrapper">
               <ul className="guide-list">
                 <li>
                   <Scissors className="guide-icon" />
                   <div>
-                    <strong>TOOLS:</strong> Use a utility knife (cutter) and a ruler for straight cuts. Or use scissors following crop marks.
+                    <strong>{t('guide_label_tools')}</strong> {t('guide_tools')}
                   </div>
                 </li>
                 <li>
                   <Star className="guide-icon text-warning" />
                   <div>
-                    <strong>GOLDEN TIP:</strong> Do not remove the liner all at once. Peel off only when pasting.
+                    <strong>{t('guide_label_golden')}</strong> {t('guide_golden_tip')}
                   </div>
                 </li>
               </ul>

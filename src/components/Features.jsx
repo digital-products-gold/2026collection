@@ -1,53 +1,66 @@
 import React from 'react';
 import { BookOpen, Sparkles, Printer, RefreshCcw } from 'lucide-react';
 import SampleCarousel from './SampleCarousel';
+import { useTranslation } from '../hooks/useTranslation';
 import './Features.css';
 
-const features = [
-  {
-    icon: <BookOpen size={32} />,
-    title: '900+ Stickers & 48 Teams',
-    description: 'Get massive coverage of all 48 participating national teams, featuring world-famous players, rising stars, and team group photos.',
-    color: 'var(--color-primary)'
-  },
-  {
-    icon: <Sparkles size={32} />,
-    title: 'Legends & Special Cards',
-    description: 'Includes special collectibles, classic football legends, and bonus sticker designs for a truly complete and premium collection.',
-    color: 'var(--color-secondary)'
-  },
-  {
-    icon: <Printer size={32} />,
-    title: 'Print-Ready A4 Pages',
-    description: 'High-resolution artwork arranged by team for convenient printing. Suitable for home printers or professional print shops.',
-    color: '#4A90E2'
-  },
-  {
-    icon: <RefreshCcw size={32} />,
-    title: 'Future File Updates',
-    description: 'Your purchase includes access to future updates. Whenever new content or teams are available, you get them at no extra charge.',
-    color: '#FF8A00'
-  }
-];
-
-const mainSamples = [
-  `${import.meta.env.BASE_URL}samples/main_album_1.png`,
-  `${import.meta.env.BASE_URL}samples/main_stickers_1.png`,
-  `${import.meta.env.BASE_URL}samples/main_stickers_5.png`,
-  `${import.meta.env.BASE_URL}samples/main_album_2.png`
-];
-
 const Features = () => {
+  const { t } = useTranslation();
+
+  const queryParams = new URLSearchParams(window.location.search);
+  const langParam = queryParams.get('lang') || '';
+  
+  let secondImage = `${import.meta.env.BASE_URL}samples/main_stickers_1.png`;
+  if (langParam === 'pt' || langParam.startsWith('pt-')) {
+    secondImage = `${import.meta.env.BASE_URL}carousel_br.png`;
+  } else if (langParam === 'es' || langParam.startsWith('es-')) {
+    secondImage = `${import.meta.env.BASE_URL}carousel_ar.png`;
+  }
+
+  const mainSamples = [
+    `${import.meta.env.BASE_URL}samples/main_album_1.png`,
+    secondImage,
+    `${import.meta.env.BASE_URL}samples/main_stickers_5.png`,
+    `${import.meta.env.BASE_URL}samples/main_album_2.png`
+  ];
+
+  const featuresList = [
+    {
+      icon: <BookOpen size={32} />,
+      title: t('feat_1_title'),
+      description: t('feat_1_desc'),
+      color: 'var(--color-primary)'
+    },
+    {
+      icon: <Sparkles size={32} />,
+      title: t('feat_2_title'),
+      description: t('feat_2_desc'),
+      color: 'var(--color-secondary)'
+    },
+    {
+      icon: <Printer size={32} />,
+      title: t('feat_3_title'),
+      description: t('feat_3_desc'),
+      color: '#4A90E2'
+    },
+    {
+      icon: <RefreshCcw size={32} />,
+      title: t('feat_4_title'),
+      description: t('feat_4_desc'),
+      color: '#FF8A00'
+    }
+  ];
+
   return (
     <section className="features-section" id="features">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Everything You Need to Collect</h2>
-          <p className="section-subtitle">Skip the blind packs. Get the complete collection organized and ready to print.</p>
+          <h2 className="section-title">{t('feat_title')}</h2>
+          <p className="section-subtitle">{t('feat_subtitle')}</p>
         </div>
 
         <div className="features-grid" style={{ marginBottom: 'var(--spacing-xl)' }}>
-          {features.map((feature, index) => (
+          {featuresList.map((feature, index) => (
             <div className="feature-card" key={index}>
               <div className="feature-icon-wrapper" style={{ color: feature.color, background: `${feature.color}15` }}>
                 {feature.icon}
@@ -58,7 +71,7 @@ const Features = () => {
           ))}
         </div>
 
-        <SampleCarousel images={mainSamples} title="Sneak Peek: Inside the Collection" />
+        <SampleCarousel images={mainSamples} title={t('feat_carousel_title')} />
       </div>
     </section>
   );

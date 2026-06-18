@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 import './FAQ.css';
 
 const faqs = [
@@ -22,19 +23,27 @@ const faqs = [
 ];
 
 const FAQ = () => {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState(0);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? -1 : index);
   };
 
+  const faqsList = [
+    { question: t('faq_q1'), answer: t('faq_a1') },
+    { question: t('faq_q2'), answer: t('faq_a2') },
+    { question: t('faq_q3'), answer: t('faq_a3') },
+    { question: t('faq_q4'), answer: t('faq_a4') }
+  ];
+
   return (
     <section className="faq-section" id="faq">
       <div className="container">
-        <h2 className="section-title text-center">Frequently Asked Questions</h2>
+        <h2 className="section-title text-center">{t('faq_title')}</h2>
         
         <div className="faq-list">
-          {faqs.map((faq, index) => (
+          {faqsList.map((faq, index) => (
             <div 
               key={index} 
               className={`faq-item ${openIndex === index ? 'active' : ''}`}

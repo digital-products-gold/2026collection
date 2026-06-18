@@ -1,15 +1,17 @@
 import React from 'react';
 import { ShoppingCart, ShieldCheck } from 'lucide-react';
+import { useTranslation } from '../hooks/useTranslation';
 import './Pricing.css';
 
 const Pricing = ({ onOpenDownload }) => {
+  const { t } = useTranslation();
   return (
     <section className="pricing-section" id="pricing">
       <div className="container">
         <div className="pricing-card">
           <div className="pricing-header">
-            <h3>Complete Collection</h3>
-            <p>Get instant access to over 900 stickers</p>
+            <h3>{t('pricing_title')}</h3>
+            <p>{t('pricing_subtitle')}</p>
           </div>
           
           <div className="pricing-price">
@@ -17,24 +19,24 @@ const Pricing = ({ onOpenDownload }) => {
             <span className="amount">19</span>
             <span className="cents">.99</span>
           </div>
-          <div className="pricing-original">Limited Time Offer</div>
+          <div className="pricing-original">{t('pricing_offer')}</div>
           
           <ul className="pricing-features">
-            <li>✓ Digital PDF Sticker Collection (A4 Ready)</li>
-            <li>✓ All 48 Teams & Special Collectibles</li>
-            <li>✓ Backing Templates & Instructions</li>
-            <li>✓ Free Future File Updates</li>
-            <li>✓ Instant Access After Purchase</li>
+            <li>{t('pricing_feat_1')}</li>
+            <li>{t('pricing_feat_2')}</li>
+            <li>{t('pricing_feat_3')}</li>
+            <li>{t('pricing_feat_4')}</li>
+            <li>{t('pricing_feat_5')}</li>
           </ul>
           
           <button className="btn btn-primary btn-large pulse-btn w-full" onClick={onOpenDownload}>
             <ShoppingCart size={24} />
-            Download Now
+            {t('pricing_btn')}
           </button>
           
           <div className="guarantee">
             <ShieldCheck size={20} className="guarantee-icon" />
-            <span>Secure Payment & Instant Delivery</span>
+            <span>{t('pricing_guarantee')}</span>
           </div>
         </div>
       </div>
