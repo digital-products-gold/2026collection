@@ -18,7 +18,13 @@ function App() {
 
   // Basic client-side routing
   const pathname = window.location.pathname;
-  const isDownloadRoute = pathname === '/download' || pathname === '/download/' || pathname.endsWith('/download') || pathname.endsWith('/download/');
+  const queryParams = new URLSearchParams(window.location.search);
+  const isDownloadRoute = 
+    pathname === '/download' || 
+    pathname === '/download/' || 
+    pathname.endsWith('/download') || 
+    pathname.endsWith('/download/') ||
+    queryParams.get('page') === 'download';
 
   if (isDownloadRoute) {
     return (
