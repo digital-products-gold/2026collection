@@ -5,6 +5,19 @@ import './Pricing.css';
 
 const Pricing = ({ onOpenDownload }) => {
   const { t } = useTranslation();
+
+  const queryParams = new URLSearchParams(window.location.search);
+  const langParam = queryParams.get('lang')?.toLowerCase();
+  const isPtOrPtBr = langParam === 'pt' || langParam === 'ptbr' || langParam === 'pt-br';
+
+  const handlePricingClick = () => {
+    if (isPtOrPtBr) {
+      window.location.href = 'https://digitalmemberarea.digitalstoregames.com/checkout?storeid=600009';
+    } else {
+      onOpenDownload();
+    }
+  };
+
   return (
     <section className="pricing-section" id="pricing">
       <div className="container">
@@ -15,9 +28,19 @@ const Pricing = ({ onOpenDownload }) => {
           </div>
           
           <div className="pricing-price">
-            <span className="currency">$</span>
-            <span className="amount">19</span>
-            <span className="cents">.99</span>
+            {isPtOrPtBr ? (
+              <>
+                <span className="currency">R$</span>
+                <span className="amount">16</span>
+                <span className="cents">,90</span>
+              </>
+            ) : (
+              <>
+                <span className="currency">$</span>
+                <span className="amount">19</span>
+                <span className="cents">.99</span>
+              </>
+            )}
           </div>
           <div className="pricing-original">{t('pricing_offer')}</div>
           
@@ -29,7 +52,7 @@ const Pricing = ({ onOpenDownload }) => {
             <li>{t('pricing_feat_5')}</li>
           </ul>
           
-          <button className="btn btn-primary btn-large pulse-btn w-full" onClick={onOpenDownload}>
+          <button className="btn btn-primary btn-large pulse-btn w-full" onClick={handlePricingClick}>
             <ShoppingCart size={24} />
             {t('pricing_btn')}
           </button>
