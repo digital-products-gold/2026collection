@@ -26,12 +26,12 @@ const Pricing = ({ onOpenDownload }) => {
             <h3>{t('pricing_title')}</h3>
             <p>{t('pricing_subtitle')}</p>
           </div>
-          
+
           <div className="pricing-price">
             {isPtOrPtBr ? (
               <>
                 <span className="currency">R$</span>
-                <span className="amount">16</span>
+                <span className="amount">9</span>
                 <span className="cents">,90</span>
               </>
             ) : (
@@ -43,7 +43,7 @@ const Pricing = ({ onOpenDownload }) => {
             )}
           </div>
           <div className="pricing-original">{t('pricing_offer')}</div>
-          
+
           <ul className="pricing-features">
             <li>{t('pricing_feat_1')}</li>
             <li>{t('pricing_feat_2')}</li>
@@ -51,12 +51,12 @@ const Pricing = ({ onOpenDownload }) => {
             <li>{t('pricing_feat_4')}</li>
             <li>{t('pricing_feat_5')}</li>
           </ul>
-          
+
           <button className="btn btn-primary btn-large pulse-btn w-full" onClick={handlePricingClick}>
             <ShoppingCart size={24} />
             {t('pricing_btn')}
           </button>
-          
+
           <div className="guarantee">
             <ShieldCheck size={20} className="guarantee-icon" />
             <span>{t('pricing_guarantee')}</span>
