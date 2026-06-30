@@ -65,14 +65,15 @@ Experiência completa de colecionador, não só as figurinhas comuns:
 ## 5. Preço, Pagamento, Entrega e Acesso (foco PT-BR)
 > ⚠️ O **funil do WhatsApp é PT-BR**. Use **somente** o caminho abaixo. O modal interno EN/ES do site não se aplica ao atendimento brasileiro.
 
-*   **Preço (PT-BR):** **R$ 16,90** — *Oferta por Tempo Limitado*.
-*   **Checkout:** `https://digitalmemberarea.digitalstoregames.com/checkout?storeid=600009`
-*   **Página de vendas (PT):** `https://digitalproductsgold.com/2026collection/?lang=pt`
-*   **Entrega:** **instantânea** após a confirmação do pagamento — pagamento seguro e entrega imediata.
-*   **Acesso:** **permanente**, com **atualizações futuras gratuitas** (novas seleções, convocações atualizadas e páginas extras entram na mesma pasta de download).
-*   **Formas de pagamento (PT-BR):** **PIX**, **Cartão de Crédito** e **Mercado Pago**.
+*   Preço (PT-BR): **R$ 16,90** — *Oferta por Tempo Limitado*.
+*   Checkout PT-BR: `https://digitalmemberarea.digitalstoregames.com/checkout?storeid=600009`
+*   Checkout EN/ES: `https://digitalmemberarea.digitalstoregames.com/checkout?storeid=600010`
+*   Página de vendas (PT): `https://digitalproductsgold.com/2026collection/?lang=pt`
+*   Entrega: **instantânea** após a confirmação do pagamento — pagamento seguro e entrega imediata.
+*   Acesso: **permanente**, com **atualizações futuras gratuitas** (novas seleções, convocações atualizadas e páginas extras entram na mesma pasta de download).
+*   Formas de pagamento (PT-BR): **PIX**, **Cartão de Crédito** e **Mercado Pago**.
 
-*Referência de outros idiomas (apenas site, não usar no WhatsApp BR): EN/ES a US$ 19.99, pagos via **Stripe** (e demais opções que a Stripe oferece).*
+*Referência de outros idiomas (apenas site, não usar no WhatsApp BR): EN/ES a US$ 19.99, pagos via **Stripe** (e demais opções que a Stripe oferece) no checkout do storeid=600010.*
 
 ---
 
@@ -153,8 +154,10 @@ Produto muito bem avaliado (base real de satisfação). Ângulos de venda mais c
 
 **Checkout PT-BR:** `https://digitalmemberarea.digitalstoregames.com/checkout?storeid=600009`
 
+**Checkout EN/ES:** `https://digitalmemberarea.digitalstoregames.com/checkout?storeid=600010`
+
 **Área do cliente (PT-BR):** `https://emulators.digitalstoregames.com/recuperaracesso/login.html` (mesma estrutura dos emuladores).
 
-**Formas de pagamento:** PT-BR → PIX, Cartão de Crédito e Mercado Pago. EN/ES → Stripe (e demais opções da Stripe).
+**Formas de pagamento:** PT-BR → PIX, Cartão de Crédito e Mercado Pago. EN/ES → Stripe (e demais opções da Stripe) via checkout `storeid=600010`.
 
 > Nota de postura: o site não anuncia garantia de X dias (só o selo "Pagamento Seguro e Entrega Instantânea"). O vendedor não promete reembolso no chat — reembolso/insatisfação → suporte humano (🔴).

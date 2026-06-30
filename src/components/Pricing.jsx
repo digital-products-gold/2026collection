@@ -14,7 +14,7 @@ const Pricing = ({ onOpenDownload }) => {
     if (isPtOrPtBr) {
       window.location.href = 'https://digitalmemberarea.digitalstoregames.com/checkout?storeid=600009';
     } else {
-      onOpenDownload();
+      window.location.href = 'https://digitalmemberarea.digitalstoregames.com/checkout?storeid=600010';
     }
   };
 
