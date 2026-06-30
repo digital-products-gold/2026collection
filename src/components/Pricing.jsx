@@ -37,8 +37,8 @@ const Pricing = ({ onOpenDownload }) => {
             ) : (
               <>
                 <span className="currency">$</span>
-                <span className="amount">19</span>
-                <span className="cents">.99</span>
+                <span className="amount">29</span>
+                <span className="cents">.70</span>
               </>
             )}
           </div>
